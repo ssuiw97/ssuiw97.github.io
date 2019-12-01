@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>不要在template上注册事件</title>
+      <link href="/2019/11/29/%E4%B8%8D%E8%A6%81%E5%9C%A8template%E4%B8%8A%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6/"/>
+      <url>/2019/11/29/%E4%B8%8D%E8%A6%81%E5%9C%A8template%E4%B8%8A%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h3 id="《微信小程序开发入门与实践》读书笔记-第六章-不要在template上注册事件"><a href="#《微信小程序开发入门与实践》读书笔记-第六章-不要在template上注册事件" class="headerlink" title="《微信小程序开发入门与实践》读书笔记 第六章 不要在template上注册事件"></a>《微信小程序开发入门与实践》读书笔记 第六章 不要在template上注册事件</h3><p>在template上注册事件是无效的。template标签仅仅是一个占位符，在编译后会被template模板内容替换。</p><p>同样，也不能在block标签上注册事件，因为block也会在编译后消失。</p><ul><li>解决方法：增加view容器包裹template模板</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信小程序 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2019/11/26/hello-world/"/>
       <url>/2019/11/26/hello-world/</url>
