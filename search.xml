@@ -4,16 +4,113 @@
   
     
     <entry>
-      <title>不要在template上注册事件</title>
-      <link href="/2019/11/29/%E4%B8%8D%E8%A6%81%E5%9C%A8template%E4%B8%8A%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6/"/>
-      <url>/2019/11/29/%E4%B8%8D%E8%A6%81%E5%9C%A8template%E4%B8%8A%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6/</url>
+      <title>小程序中的相对路径与绝对路径</title>
+      <link href="/2019/12/01/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/"/>
+      <url>/2019/12/01/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/</url>
       
-        <content type="html"><![CDATA[<h3 id="《微信小程序开发入门与实践》读书笔记-第六章-不要在template上注册事件"><a href="#《微信小程序开发入门与实践》读书笔记-第六章-不要在template上注册事件" class="headerlink" title="《微信小程序开发入门与实践》读书笔记 第六章 不要在template上注册事件"></a>《微信小程序开发入门与实践》读书笔记 第六章 不要在template上注册事件</h3><p>在template上注册事件是无效的。template标签仅仅是一个占位符，在编译后会被template模板内容替换。</p><p>同样，也不能在block标签上注册事件，因为block也会在编译后消失。</p><ul><li>解决方法：增加view容器包裹template模板</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>小程序中有相对路径和绝对路径的区别</p><p><img src="https://raw.githubusercontent.com/ssuiw97/PicBedForHexoBlog/master/img/miniProgram/reading%20notes/mp3-1.jpg" alt="加入图片后的文件结构"></p><ol><li>绝对路径</li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"/images/avatar/avatar-1.png"</span> /&gt;</span></span><br></pre></td></tr></table></figure><ul><li>以“/”开头，“/”代表根目录</li></ul><ol start="2"><li>相对路径</li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"../../images/avatar/avatar-1.png"</span> /&gt;</span></span><br></pre></td></tr></table></figure><ul><li>“..”代表向上一级</li></ul><blockquote><p>这里使用绝对路径更加简洁</p></blockquote>]]></content>
       
       
       <categories>
           
           <category> 微信小程序 </category>
+          
+          <category> 《微信小程序开发入门与实践》读书笔记 </category>
+          
+          <category> Chap.3 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>在app.json中注册页面</title>
+      <link href="/2019/12/01/%E5%9C%A8app.json%E4%B8%AD%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2/"/>
+      <url>/2019/12/01/%E5%9C%A8app.json%E4%B8%AD%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2/</url>
+      
+        <content type="html"><![CDATA[<p>在app.json中注册welcome页面，在app.json中加入如下代码</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>:[</span><br><span class="line">        <span class="string">"pages/welcome/welcome"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li><p>代码是一个典型的json对象。这个对象的第一个属性pages接受一个数组，数组的每一项是一个字符串，用来指定我们的小程序将由哪些页面组成</p></li><li><p>注意，页面路径前面不要加“/”</p></li><li><p>路径最后一段welcome，不需要指定具体的文件扩展名。MINA框架将会自动去寻找页面路径，并将页面的.json、.js、.wxml和.wxss这四个文件进行整合</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信小程序 </category>
+          
+          <category> 《微信小程序开发入门与实践》读书笔记 </category>
+          
+          <category> Chap.3 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用小程序快捷键</title>
+      <link href="/2019/12/01/%E5%B8%B8%E7%94%A8%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+      <url>/2019/12/01/%E5%B8%B8%E7%94%A8%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>格式调整</p><table><thead><tr><th>快捷键</th><th>说明</th></tr></thead><tbody><tr><td>Ctrl+[, Ctrl+]</td><td>代码行缩进</td></tr><tr><td>Shift+Alt+F</td><td>代码格式化</td></tr><tr><td>Alt+Up, Alt+Down</td><td>上下移动一行</td></tr><tr><td>Ctrl+Shift+F</td><td>全局搜索</td></tr><tr><td>Ctrl+Shift+[, Ctrl+Shift+]</td><td>折叠打开代码块</td></tr><tr><td>Shift+Alt+Up, Shift+Alt+Up</td><td>向上向下复制一行</td></tr><tr><td>Ctrl+Shift+Enter</td><td>在当前行上方插入一行</td></tr></tbody></table></li><li><p>光标相关</p><table><thead><tr><th>快捷键</th><th>说明</th></tr></thead><tbody><tr><td>Ctrl+End</td><td>移动到文件结尾</td></tr><tr><td>Ctrl+Home</td><td>移动到文件开头</td></tr><tr><td>Ctrl+i</td><td>选中当前行</td></tr><tr><td>Shift+End</td><td>选择从光标移到行尾</td></tr><tr><td>Shift+Home</td><td>选择从行首移到光标处</td></tr><tr><td>Ctrl+Shift+L</td><td>选中所有匹配</td></tr><tr><td>Ctrl+D</td><td>选中匹配（第一个匹配的）</td></tr><tr><td>Ctrl+U</td><td>光标回退</td></tr></tbody></table></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信小程序 </category>
+          
+          <category> 《微信小程序开发入门与实践》读书笔记 </category>
+          
+          <category> Chap.2 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>不要在template上注册事件</title>
+      <link href="/2019/11/29/%E4%B8%8D%E8%A6%81%E5%9C%A8template%E4%B8%8A%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6/"/>
+      <url>/2019/11/29/%E4%B8%8D%E8%A6%81%E5%9C%A8template%E4%B8%8A%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>在template上注册事件是无效的。template标签仅仅是一个占位符，在编译后会被template模板内容替换。</p><blockquote><p>同样，也不能在block标签上注册事件，因为block也会在编译后消失。</p></blockquote><p>解决方法：增加view容器包裹template模板</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;postList&#125;&#125;"</span> <span class="attr">wx:for-item</span>=<span class="string">"item"</span><span class="attr">item</span> <span class="attr">wx:for-index</span>=<span class="string">"idx"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">catchtap</span>=<span class="string">"onTapToDetail"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">template</span> <span class="attr">is</span>=<span class="string">"postItemTpl"</span> <span class="attr">data</span>=<span class="string">"...item"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信小程序 </category>
+          
+          <category> 《微信小程序开发入门与实践》读书笔记 </category>
+          
+          <category> Chap.6 </category>
           
       </categories>
       
